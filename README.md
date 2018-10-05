@@ -1,5 +1,6 @@
 # kabatree
 I hate git stash! use kabatree!!!
+kabatree create new branch in another folder.
 
 example
 
