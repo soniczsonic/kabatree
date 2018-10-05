@@ -1,21 +1,28 @@
 #!/usr/bin/env node
-const execSync = require('child_process').execSync;
-const readline = require('readline');
+const execSync = require('child_process').execSync
+const program = require('commander')
 
-console.log('tell me new worktree name')
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+program
+  .parse(process.argv)
 
-rl.on('line', worktree => {
+
+/*------   constant   ------*/
+const worktree = process.argv[process.argv.length - 1]
+const directory = getDir()
+cmd = `git worktree add -b ${worktree} ../${worktree} master; rsync -a -I --exclude='.git' ../${directory}/ ../${worktree}`
+
+
+/*------   helper function   ------*/
+const getDir = () => {
   const pwd = `${execSync("pwd")}`
   const path = pwd.split('/')
-  const directory = path[path.length - 1].replace(/\r?\n/g,"")
-  console.log(`creating ${worktree} branch`)
+  const dir = path[path.length - 1].replace(/\r?\n/g,"")
 
-  cmd = `git worktree add -b ${worktree} ../${worktree} master; rsync -av --exclude='.git' ../${directory}/ ../${worktree}`
-  execSync(cmd)
+  return dir
+}
 
-  rl.close();
-});
+
+/*------   main function   ------*/
+console.log(/*step1*/`gunnmayyann: creating ${worktree} branch. It take 30 second`)
+execSync(cmd)
+console.log(/*step2*/'fin!')
