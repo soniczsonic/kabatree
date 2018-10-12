@@ -1,9 +1,10 @@
 {
   "name": "kabatree",
-  "version": "1.0.7",
+  "version": "1.1.4",
   "description": "easy git worktree solution",
-  "main": "index.js",
-  "bin": "./cli.js",
+  "bin": {
+    "kabatree": "./kabatree.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
