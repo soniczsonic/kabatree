@@ -2,7 +2,7 @@
 I hate git stash! use kabatree!!!
 kabatree create new branch in another folder.
 
-example
+~example~
 
 npx kabatree newBranch
 
@@ -13,3 +13,6 @@ cd ..; ls
 Wow! there is the branch!
 
 you can commit and push in newBranch!
+
+~option~
+--vscode = open worktee by vscode
