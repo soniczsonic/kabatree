@@ -1,12 +1,15 @@
-eazy git worktree solution.
-You can open many branch at once.
+# kabatree
+I hate git stash! use kabatree!!!
+kabatree create new branch in another folder.
 
-~usage~
+example
 
-npx kabatree new_branch
+npx kabatree newBranch
 
 = git worktree add -b new_branch ../new_branch master; rsync -a -I --exclude='.git' ../AwesomeProject/ ../new_branch
 
-開発予定？
-gitignoreされたファイルのみrsyncでコピーし、高速化
-vscodeで開くオプションをつける。
+then
+cd ..; ls
+Wow! there is the branch!
+
+you can commit and push in newBranch!
